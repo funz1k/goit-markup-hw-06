@@ -49,7 +49,7 @@ button {
   color: var(--color-href);
 }
 
-.title {
+.section__title {
   line-height: 1.16;
   color: var(--color-href);
   font-size: 36px;
@@ -162,7 +162,7 @@ body {
 .main__link {
   position: relative;
 }
-.main__link:not(.link-active):after {
+.main__link:not(.main__link--active):after {
   content: "";
   position: absolute;
   bottom: -32px;
@@ -175,14 +175,14 @@ body {
   transform: translateX(-50%);
   transition: opacity 250ms var(--timing-function), transform 250ms var(--timing-function);
 }
-.main__link:not(.link-active):hover:after {
+.main__link:not(.main__link--active):hover:after {
   opacity: 1;
   transform: translateX(0);
 }
-.link-active {
+.main__link--active {
   position: relative;
 }
-.link-active:after {
+.main__link--active:after {
   content: "";
   position: absolute;
   bottom: -32px;
@@ -194,13 +194,13 @@ body {
   border-radius: 2px;
 }
 /*=======================================================*/
-.cotacts-tel {
+.header__tel {
   line-height: 1.71;
   color: var(--color-contacts);
   text-decoration: none;
   transition: color 250ms var(--timing-function);
 }
-.tel__icon {
+.header__icon--tel {
   fill: var(--color-contacts);
   margin-right: 10px;
   width: 10px;
@@ -208,7 +208,7 @@ body {
   transition: fill 250ms var(--timing-function);
 }
 
-.contacts-mail {
+.header__mail {
   line-height: 1.71;
   margin: 0px 50px 0px 0px;
   color: var(--color-contacts);
@@ -216,7 +216,7 @@ body {
   transition: color 250ms var(--timing-function);
 }
 
-.mail__icon {
+.header__icon--mail {
   fill: var(--color-contacts);
   margin-right: 10px;
   width: 16px;
@@ -231,7 +231,7 @@ body {
   align-items: center;
 }
 
-.main__header {
+.main__hero {
   max-width: 1600px;
   width: 100%;
   background-image: url("../img/header-background/header-background.png");
@@ -245,7 +245,7 @@ body {
   position: relative;
 }
 
-.main__header::before {
+.main__hero::before {
   content: "";
   position: absolute;
   left: 0;
@@ -255,7 +255,7 @@ body {
   background: linear-gradient(90deg, rgba(47, 48, 58, 0.4) 40.45%, rgba(47, 48, 58, 0.4) 100%);
 }
 
-.main__header-block {
+.main__block {
   position: relative;
   min-height: 210px;
 }
@@ -547,7 +547,7 @@ body {
 .footer__link {
   background-color: var(--color-icons-footer);
 }
-.social__icon-white {
+.social__icon--white {
   fill: var(--color-white);
 }
 .footer__feedback {
@@ -569,6 +569,7 @@ body {
   border-radius: 4px;
   padding: 15px;
   transition: 250ms border var(--timing-function);
+  color: var(--color-white);
 }
 .feedback__input::placeholder {
   font-size: 16px;
@@ -627,7 +628,7 @@ body {
   color: var(--color-white);
 }
 /*================== PROJECTS ========================*/
-.main__projects {
+.portfolio__projects {
   margin-top: 50px;
   display: flex;
   justify-content: center;
@@ -645,18 +646,18 @@ body {
   background-color: var(--color-white);
   transition: box-shadow 250ms var(--timing-function);
 }
-.project__link {
+.projects__link {
   text-decoration: none;
   outline: none;
 }
 
 /*================ TRANSITION__PROJECT ====================*/
 
-.project__thumb {
+.projects__thumb {
   position: relative;
   overflow: hidden;
 }
-.project__overlay {
+.projects__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -667,7 +668,7 @@ body {
   transform: translateY(100%);
   transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
 }
-.project__text {
+.projects__text {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -681,20 +682,22 @@ body {
   padding: 63px 24px;
   opacity: 1;
 }
-.projects__item:hover .project__overlay,
+.projects__item:hover .projects__overlay,
 .projects__item:hover {
   transform: translateY(0);
   opacity: 1;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
+.projects__item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 /*===========================================================*/
 
-.project__block {
+.projects__block {
   padding: 20px 24px;
 }
 
-.project__title {
+.projects__title {
   margin-bottom: 4px;
   color: var(--color-href);
   font-size: 18px;
@@ -702,7 +705,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.06em;
 }
-.project__subtitle {
+.projects__subtitle {
   color: var(--color-contacts);
   font-size: 16px;
   line-height: 1.875;
